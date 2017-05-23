@@ -52,7 +52,16 @@ public class MyObservable {
 		
 		// 3. The other way to create Observables is by calling the create method and implementing your own logic to call onNext, onError and onCompleted
 		
+		// ------------------------------------------------------------------------------------------------------ //
 		
+		Observable<String> hello = Observable.just("Hello", "Hi");
+		Consumer<String> consumer2 = new Consumer<String>() {
+			@Override
+			public void accept(String arg0) throws Exception {
+				System.out.println("From consumer2 -> "+arg0);
+			}
+		};
+		hello.subscribe(consumer2);
 		
 		
 		
